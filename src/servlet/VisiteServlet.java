@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+import utils.QueryBuilder;
 import utils.Visite;
 
 @WebServlet("/visite")
@@ -21,7 +23,7 @@ public class VisiteServlet extends HttpServlet {
                 .setNomEtudiant(request.getParameter("nomEtudiant"))
                 .setNote(Integer.parseInt(request.getParameter("note")));
 
-        System.out.println(visite);
+        QueryBuilder.handleVisit(visite);
 //        this.getServletContext().getRequestDispatcher("/web/index.html").forward(request, response);
     }
 
