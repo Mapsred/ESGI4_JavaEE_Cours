@@ -1,28 +1,35 @@
 package utils;
 
-public class Visite implements Comparable<Visite> {
+public class Visite extends Appointment implements Comparable<Visite> {
+    private static int nbVisite = 0;
     private String nomEtudiant;
     private String date;
     private int note;
 
     /**
      * @param nomEtudiant String
-     * @param date String
-     * @param note int
+     * @param date        String
+     * @param note        int
      */
-    public Visite(String nomEtudiant, String date, int note) {
+    public Visite(String nomEtudiant, String date, int note, String report) {
+        super(report);
         this.nomEtudiant = nomEtudiant;
         this.date = date;
         this.note = note;
+        Visite.nbVisite++;
     }
 
     /**
      * Construct with empty strings
      */
     public Visite() {
+        super("");
         this.nomEtudiant = "";
         this.date = "";
+        Visite.nbVisite++;
     }
+
+
 
     /**
      * @return String
@@ -72,13 +79,27 @@ public class Visite implements Comparable<Visite> {
         return this;
     }
 
+    /**
+     * @return String
+     */
     @Override
     public String toString() {
-        return this.getNomEtudiant()+" - "+this.getDate();
+        return this.getNomEtudiant() + " - " + this.getDate();
     }
 
+    /**
+     *
+     * @param visite Visite
+     * @return int
+     */
     @Override
     public int compareTo(Visite visite) {
         return visite.nomEtudiant.equals(this.nomEtudiant) ? 1 : 0;
+    }
+
+    @Override
+    public void printReport() {
+        System.out.print(Visite.nbVisite + " : ");
+        super.printReport();
     }
 }
