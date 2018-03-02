@@ -1,6 +1,7 @@
 package utils;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class QueryBuilder {
@@ -15,6 +16,18 @@ public class QueryBuilder {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
+    public static ResultSet findAllVisits() {
+        String SELECT = "SELECT * FROM `visite`";
+        try {
+            PreparedStatement query = ConfigHandler.getDatabase().prepare(SELECT);
+
+            return query.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
