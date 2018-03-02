@@ -1,5 +1,6 @@
 package servlet;
 
+import utils.Manager;
 import utils.QueryBuilder;
 import utils.Visite;
 
@@ -19,6 +20,10 @@ public class VisiteServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (!Manager.isUserValid(req, resp)) {
+            return;
+        }
+
         System.out.println("doGet VisiteServlet");
         this.getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
     }
@@ -28,7 +33,11 @@ public class VisiteServlet extends HttpServlet {
      * @param response HttpServletResponse
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        if (!Manager.isUserValid(request, response)) {
+            return;
+        }
+
         System.out.println("doPostOk VisiteServlet");
         Visite visite = new Visite();
         String date = request.getParameter("date");

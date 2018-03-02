@@ -13,7 +13,7 @@ import java.util.Properties;
 
 public class ConfigHandler {
 
-    private static MySQL database;
+    private static MySQL database = null;
 
     /**
      * @return Properties

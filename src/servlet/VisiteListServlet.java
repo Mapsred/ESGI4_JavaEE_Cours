@@ -1,5 +1,6 @@
 package servlet;
 
+import utils.Manager;
 import utils.QueryBuilder;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,10 @@ public class VisiteListServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (!Manager.isUserValid(req, resp)) {
+            return;
+        }
+
         System.out.println("doGet VisiteListServlet");
         req.setAttribute("visits", QueryBuilder.findAllVisits());
 

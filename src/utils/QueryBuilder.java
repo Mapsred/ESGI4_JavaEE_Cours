@@ -30,4 +30,20 @@ public class QueryBuilder {
 
         return null;
     }
+
+    public static boolean isUserValid(String username, String password) {
+        String SELECT = "SELECT * FROM `users` WHERE username = ? AND password = ?";
+        try {
+            PreparedStatement query = ConfigHandler.getDatabase().prepare(SELECT);
+            query.setString(1, username);
+            query.setString(2, password);
+
+            ResultSet resultSet = query.executeQuery();
+            return resultSet.isBeforeFirst();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
 }
