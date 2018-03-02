@@ -129,7 +129,6 @@ public class MySQL {
      * @throws SQLException           SQL Exception
      */
     public void connect() throws SQLException {
-        System.out.println(this.toString());
         String url = "jdbc:mysql://"+this.getHostname()+":"+this.getPort()+"/"+this.getDbname();
         this.connection = DriverManager.getConnection(url, this.getUsername(), this.getPassword());
     }

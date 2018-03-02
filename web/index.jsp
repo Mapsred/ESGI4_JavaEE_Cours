@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: francois.mathieu
-  Date: 28/02/2018
-  Time: 08:22
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -18,7 +11,8 @@
 <body>
 <form method="post" class="form">
     <div class="container">
-        <h1>Hello World !</h1>
+        <%@include file="flash.jsp" %>
+        <h1>Visite !</h1>
         <div class="form-group">
             <input name="nomEtudiant" type="text" class="form-control" placeholder="nom étudiant">
         </div>
@@ -37,6 +31,10 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.fr.min.js"></script>
-<script src="Resources/js/script.js"></script>
+
+<script>
+    <%@include file="Resources/js/script.js"%>
+</script>
+
 </body>
 </html>
