@@ -38,7 +38,7 @@ public class VisiteServlet extends HttpServlet {
         if (!date.isEmpty() && !nomEtudiant.isEmpty() && !note.isEmpty()) {
             visite.setDate(date).setNomEtudiant(nomEtudiant).setNote(Integer.parseInt(note));
             QueryBuilder.handleVisit(visite);
-            request.setAttribute("flash_success", "Object visite créé");
+            request.getSession().setAttribute("flash_success", "Object visite créé");
             response.sendRedirect("/list");
 
             return;

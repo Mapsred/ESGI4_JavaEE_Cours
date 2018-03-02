@@ -10,6 +10,7 @@
 </head>
 <body>
 <form method="post" class="form">
+    <img src="Resources/images/logo-esgi.png" alt="esgi" style="max-width: 125px;">
     <div class="container">
         <%@include file="flash.jsp" %>
         <h1>Visite !</h1>
@@ -31,10 +32,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.fr.min.js"></script>
-
-<script>
-    <%@include file="Resources/js/script.js"%>
-</script>
+<script src="Resources/js/script.js"></script>
 
 </body>
 </html>

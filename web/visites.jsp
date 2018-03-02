@@ -8,7 +8,9 @@
 </head>
 <body>
 <div class="container">
-    <h1>Hello World !</h1>
+    <img src="Resources/images/logo-esgi.png" alt="esgi" style="max-width: 125px;">
+    <%@include file="flash.jsp" %>
+    <h1>Visites !</h1>
     <table class="table">
         <thead>
         <tr>
