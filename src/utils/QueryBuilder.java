@@ -31,6 +31,20 @@ public class QueryBuilder {
         return null;
     }
 
+    public static ResultSet findVisitsByName(String name) {
+        String SELECT = "SELECT * FROM `visite` WHERE name = ?";
+        try {
+            PreparedStatement query = ConfigHandler.getDatabase().prepare(SELECT);
+            query.setString(1, name);
+
+            return query.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     public static boolean isUserValid(String username, String password) {
         String SELECT = "SELECT * FROM `users` WHERE username = ? AND password = ?";
         try {

@@ -24,7 +24,13 @@ public class VisiteListServlet extends HttpServlet {
         }
 
         System.out.println("doGet VisiteListServlet");
-        req.setAttribute("visits", QueryBuilder.findAllVisits());
+
+        String name = req.getParameter("name");
+        if (null != name && !name.isEmpty()) {
+            req.setAttribute("visits", QueryBuilder.findVisitsByName(name));
+        } else {
+            req.setAttribute("visits", QueryBuilder.findAllVisits());
+        }
 
         this.getServletContext().getRequestDispatcher("/visites.jsp").forward(req, resp);
     }

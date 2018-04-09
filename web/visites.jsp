@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <img src="Resources/images/logo-esgi.png" alt="esgi" style="max-width: 125px;">
+    <img src="${pageContext.request.contextPath}/Resources/images/logo-esgi.png" alt="esgi" style="max-width: 125px;">
     <%@include file="flash.jsp" %>
     <h1>Visites !</h1>
     <table class="table">
