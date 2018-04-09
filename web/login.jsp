@@ -9,7 +9,7 @@
     <form method="post" action="${pageContext.request.contextPath}/login" class="form">
         <img src="Resources/images/logo-esgi.png" alt="esgi" style="max-width: 125px;">
         <%@include file="flash.jsp" %>
-        <h1>Visite !</h1>
+        <h1>Connexion !</h1>
         <div class="form-group">
             <input name="username" type="text" class="form-control" placeholder="Username">
         </div>

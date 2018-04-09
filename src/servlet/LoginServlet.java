@@ -1,6 +1,5 @@
 package servlet;
 
-import utils.Manager;
 import utils.QueryBuilder;
 
 import javax.servlet.ServletException;

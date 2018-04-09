@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("")
+@WebServlet("/add")
 public class VisiteServlet extends HttpServlet {
 
     /**
@@ -25,7 +25,7 @@ public class VisiteServlet extends HttpServlet {
         }
 
         System.out.println("doGet VisiteServlet");
-        this.getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        this.getServletContext().getRequestDispatcher("/add.jsp").forward(req, resp);
     }
 
     /**
@@ -54,6 +54,6 @@ public class VisiteServlet extends HttpServlet {
         }
 
         request.getSession().setAttribute("flash_danger", "Object visite non créé");
-        response.sendRedirect("/");
+        response.sendRedirect("/add");
     }
 }
