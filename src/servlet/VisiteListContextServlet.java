@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/list")
-public class VisiteListServlet extends HttpServlet {
+public class VisiteListContextServlet extends HttpServlet {
 
     /**
      * @param req  HttpServletRequest
@@ -23,7 +23,7 @@ public class VisiteListServlet extends HttpServlet {
             return;
         }
 
-        System.out.println("doGet VisiteListServlet");
+        System.out.println("doGet VisiteListContextServlet");
 
         String name = req.getParameter("name");
         if (null != name && !name.isEmpty()) {

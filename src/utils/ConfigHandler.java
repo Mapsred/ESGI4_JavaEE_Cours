@@ -43,6 +43,10 @@ public class ConfigHandler {
         return ConfigHandler.database;
     }
 
+    public static void setDatabase(MySQL database) {
+        ConfigHandler.database = database;
+    }
+
     public static Properties getStaticConfig() throws IOException {
         return init().getConfig();
     }

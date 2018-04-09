@@ -1,5 +1,6 @@
 package utils;
 
+import javax.servlet.ServletContext;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
@@ -27,6 +28,15 @@ public class MySQL {
             e.printStackTrace();
         }
 
+    }
+
+    public MySQL(ServletContext servletContext) throws ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+        this.setDbname(servletContext.getInitParameter("mysql_dbname"))
+                .setHostname(servletContext.getInitParameter("mysql_hostname"))
+                .setPassword(servletContext.getInitParameter("mysql_password"))
+                .setPort(Integer.parseInt(servletContext.getInitParameter("mysql_port")))
+                .setUsername(servletContext.getInitParameter("mysql_username"));
     }
 
     /**
