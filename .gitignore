@@ -78,3 +78,4 @@ local.properties
 hs_err_pid*
 
 resources/config.properties
+!/lib/*jar

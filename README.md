@@ -2,6 +2,13 @@
 
 ## How to use in IntelliJ ?
 
+### Fast way
+
+The `docs/idea` folder contains an example of runner and artifacts
+
+Copy the `docs/idea` to your .idea
+
+### Manually
 First make sure you have a running TomCat Server.
 
 Go to File -> Project Structure (CTRL + ALT + MAJ + S).
